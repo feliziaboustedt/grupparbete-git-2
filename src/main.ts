@@ -17,3 +17,26 @@ interface IMovie{
     
     console.log(response.data.Search);
   });
+
+  function createHtml(movies: IMovie) {
+    const moviesContainer = document.getElementById("movies");
+
+    if (moviesContainer) {
+      movieContainer.innerHTML = "";
+    }
+
+    movies.forEach(movie) => {
+      const movieContainer = document.createElement("div");
+      const heading = document.createElement("h3");
+      const image = document.createElement("img");
+
+      heading.innerHTML = movie.Title;
+      image.src = movie.Poster;
+      image.alt = movie.Title;
+    }
+
+    movieContainer?.appendChild(heading);
+    movieContainer?.appendChild(image);
+
+    movieContainer?.appendChild(movieContainer);
+  }
