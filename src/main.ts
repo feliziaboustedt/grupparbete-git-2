@@ -13,8 +13,7 @@ interface IMovie{
   document.getElementById("form")?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const respons = await axios.get<IOMDBResponse>("https://img.omdbapi.com/?apikey=c5e0d36b&s=harry");
+    const response = await axios.get<IOMDBResponse>("https://img.omdbapi.com/?=c5e0d36b&s=harry");
     
-
-    console.log("hej hej")
+    console.log(response.data.Search);
   });
