@@ -1,4 +1,4 @@
-interface IOMDBRespons{
+interface IOMDBResponse{
     Search: IMovie[];
 }
 
@@ -8,10 +8,11 @@ interface IMovie{
     imdbID: string;
 }
 
-  document.getElementById("form")?.addEventListener("submit", (event) => {
+  document.getElementById("form")?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    console.log("hej hej");
-  })
+    const respons = await axios.get<IOMDBResponse>("https://img.omdbapi.com/?apikey=c5e0d36b&s=harry");
+    
 
-  
+    console.log("hej hej")
+  });
