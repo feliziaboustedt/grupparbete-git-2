@@ -13,7 +13,7 @@ interface IMovie{
   document.getElementById("form")?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const response = await axios.get<IOMDBResponse>("https://img.omdbapi.com/?=c5e0d36b&s=harry");
+    const response = await axios.get<IOMDBResponse>("https://omdbapi.com/?apikey=c5e0d36b&s=harry");
     
     console.log(response.data.Search);
   });
@@ -38,7 +38,7 @@ interface IMovie{
     movieContainer?.appendChild(heading);
     movieContainer?.appendChild(image);
 
-    moviesContainer?.appendChild(movieContainer);
+    movieContainer?.appendChild(movieContainer);
   });
   }
 
