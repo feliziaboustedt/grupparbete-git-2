@@ -10,16 +10,8 @@ interface IMovie{
     imdbID: string;
 }
 
-  document.getElementById("form")?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const response = await axios.get<IOMDBResponse>("https://omdbapi.com/?apikey=c5e0d36b&s=harry");
-    
-    createHtml(response.data.Search);
-  });
-
   function createHtml(movies: IMovie[]) {
-    const moviesContainer = document.getElementById("movies");
+    const moviesContainer = document.getElementById("moviesContainer");
 
     if (moviesContainer) {
       moviesContainer.innerHTML = "";
@@ -37,6 +29,19 @@ interface IMovie{
     movieContainer.appendChild(heading); 
     movieContainer.appendChild(image);
 
+<<<<<<< HEAD
     moviesContainer.appendChild(movieContainer);
+=======
+    moviesContainer?.appendChild(movieContainer);
+
+>>>>>>> 78ca0a59547f8c06a79359507ca33acd5b81c178
   });
 }
+
+document.getElementById("form")?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const response = await axios.get<IOMDBResponse>("https://omdbapi.com/?apikey=c5e0d36b&s=harry");
+  
+  createHtml(response.data.Search);
+});
