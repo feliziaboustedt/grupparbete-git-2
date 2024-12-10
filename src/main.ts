@@ -18,14 +18,14 @@ interface IMovie{
     console.log(response.data.Search);
   });
 
-  function createHtml(movies: IMovie[]) {
+  function createHtml(movies: IMovie) {
     const moviesContainer = document.getElementById("movies");
 
     if (moviesContainer) {
-      moviesContainer.innerHTML = "";
+      movieContainer.innerHTML = "";
     }
 
-    movies.forEach((movie) => {
+    movies.forEach(movie) => {
       const movieContainer = document.createElement("div");
       const heading = document.createElement("h3");
       const image = document.createElement("img");
@@ -33,12 +33,10 @@ interface IMovie{
       heading.innerHTML = movie.Title;
       image.src = movie.Poster;
       image.alt = movie.Title;
-    
+    }
 
     movieContainer?.appendChild(heading);
     movieContainer?.appendChild(image);
 
-    moviesContainer?.appendChild(movieContainer);
-  });
+    movieContainer?.appendChild(movieContainer);
   }
-
