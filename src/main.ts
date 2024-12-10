@@ -18,7 +18,7 @@ interface IMovie{
     console.log(response.data.Search);
   });
 
-  function createHtml(movies: IMovie) {
+  function createHtml(movies: IMovie[]) {
     const moviesContainer = document.getElementById("movies");
 
     if (moviesContainer) {
@@ -38,7 +38,7 @@ interface IMovie{
     movieContainer?.appendChild(heading);
     movieContainer?.appendChild(image);
 
-    movieContainer?.appendChild(movieContainer);
+    moviesContainer?.appendChild(movieContainer);
   });
   }
 
