@@ -34,7 +34,14 @@ interface IMovie{
 document.getElementById("form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const response = await axios.get<IOMDBResponse>("https://omdbapi.com/?apikey=c5e0d36b&s=harry");
+  const inputText = document.getElementById("input");
+
+  if (inputText) {
+    const userInput = (inputText as HTMLInputElement).value;
+
+    const response = await axios.get<IOMDBResponse>("https://omdbapi.com/?apikey=c5e0d36b&s=" + userInput);
+
+    createHtml(response.data.Search);
+  }
   
-  createHtml(response.data.Search);
 });
