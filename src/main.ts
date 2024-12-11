@@ -26,9 +26,7 @@ interface IMovie{
       image.src = movie.Poster;
       image.alt = movie.Title;
 
-    movieContainer?.appendChild(heading); 
-    movieContainer?.appendChild(image);
-
+    movieContainer?.append(heading, image);
     moviesContainer?.appendChild(movieContainer);
   });
 }
