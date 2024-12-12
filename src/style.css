@@ -106,3 +106,15 @@ nav > ul {
 nav > ul li {
   list-style: none;
 }
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+  margin: 10px;
+}
