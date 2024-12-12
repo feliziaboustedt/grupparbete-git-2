@@ -29,6 +29,9 @@ interface IMovie{
       image.alt = movie.Title;
       viewMoreBtn.innerHTML = "View More";
 
+      viewMoreBtn.setAttribute("data-bs-toggle", "modal")
+      viewMoreBtn.setAttribute("data-bs-target", "#exampleModal")
+
       movieContainer?.append(heading, image, viewMoreBtn);
       moviesContainer?.appendChild(movieContainer);
   });
