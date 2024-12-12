@@ -8,6 +8,7 @@ interface IMovie{
     Title: string; 
     Poster: string;
     imdbID: string;
+    Plot: string;
 }
 
   function createHtml(movies: IMovie[]) {
