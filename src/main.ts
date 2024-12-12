@@ -28,6 +28,7 @@ interface IMovie{
       image.src = movie.Poster;
       image.alt = movie.Title;
       viewMoreBtn.innerHTML = "View More";
+      movieContainer.setAttribute("class", "movie");
 
       movieContainer?.append(heading, image, viewMoreBtn);
       moviesContainer?.appendChild(movieContainer);
