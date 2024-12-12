@@ -21,12 +21,14 @@ interface IMovie{
       const movieContainer = document.createElement("div");
       const heading = document.createElement("h3");
       const image = document.createElement("img");
+      const viewMoreBtn = document.createElement("button");
 
       heading.innerHTML = movie.Title;
       image.src = movie.Poster;
       image.alt = movie.Title;
+      viewMoreBtn.innerHTML = "View More";
 
-      movieContainer?.append(heading, image);
+      movieContainer?.append(heading, image, viewMoreBtn);
       moviesContainer?.appendChild(movieContainer);
   });
 }
